@@ -1,7 +1,7 @@
 package com.example.mvvm.domain
 
-class EditNoteUseCase {
+class EditNoteUseCase(private val notesRepository: NotesRepository) {
     fun editNote(noteItem: NoteItem) {
-        TODO("Add use case")
+        notesRepository.editNote(noteItem)
     }
 }

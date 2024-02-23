@@ -1,7 +1,7 @@
 package com.example.mvvm.domain
 
-class DeleteNoteUseCase {
+class DeleteNoteUseCase(private val notesRepository: NotesRepository) {
     fun deleteNote(noteItem: NoteItem) {
-        TODO("Add use case")
+        notesRepository.deleteNote(noteItem)
     }
 }

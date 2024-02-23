@@ -1,7 +1,7 @@
 package com.example.mvvm.domain
 
-class GetNoteByIdUseCase {
+class GetNoteByIdUseCase(private val notesRepository: NotesRepository) {
     fun getNoteByIdUseCase(noteId: Int): NoteItem {
-        TODO("Add use case")
+        return notesRepository.getNoteByIdUseCase(noteId)
     }
 }
