@@ -9,5 +9,5 @@ interface NotesRepository {
 
     fun getNoteByIdUseCase(noteId: Int): NoteItem
 
-    fun getNote(): List<NoteItem>
+    fun getNotes(): List<NoteItem>
 }
