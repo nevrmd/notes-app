@@ -1,5 +1,7 @@
 package com.example.mvvm.domain
 
+import androidx.lifecycle.LiveData
+
 interface NotesRepository {
     fun addNote(noteItem: NoteItem)
 
@@ -9,5 +11,5 @@ interface NotesRepository {
 
     fun getNoteByIdUseCase(noteId: Int): NoteItem
 
-    fun getNotes(): List<NoteItem>
+    fun getNotes(): LiveData<List<NoteItem>>
 }

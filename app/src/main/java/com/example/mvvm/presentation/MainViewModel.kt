@@ -12,16 +12,15 @@ class MainViewModel: ViewModel() {
 
     private val repository = NotesRepositoryImplementation
 
-    // only get/edit/delete are required to work with screen
+    // only get/delete are required to work with user in MainActivity
     private val getNotesUseCase = GetNoteUseCase(repository)
-    private val editNoteUseCase = EditNoteUseCase(repository)
     private val deleteNoteUseCase = DeleteNoteUseCase(repository)
 
-    val noteList = MutableLiveData<List<NoteItem>>()
+    val noteList = getNotesUseCase.getNotes()
 
-    fun getNotes() {
-        // gets elements from UseCase and adds them to LiveData
-        val list = getNotesUseCase.getNotes()
-        noteList.value = list // use postValue if not in main thread
+    fun deleteNote(noteItem: NoteItem) {
+        // deletes note
+        deleteNoteUseCase.deleteNote(noteItem)
+        // and adds changes to LiveData
     }
 }
