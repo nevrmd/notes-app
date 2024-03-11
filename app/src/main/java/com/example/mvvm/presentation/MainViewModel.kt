@@ -19,8 +19,6 @@ class MainViewModel: ViewModel() {
     val noteList = getNotesUseCase.getNotes()
 
     fun deleteNote(noteItem: NoteItem) {
-        // deletes note
         deleteNoteUseCase.deleteNote(noteItem)
-        // and adds changes to LiveData
     }
 }
